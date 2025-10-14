@@ -7,7 +7,7 @@ import type { NextRequest } from 'next/server';
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email } = await req.json();
+    const { name, email, website } = await req.json();
 
     if (!email) {
       return new Response(JSON.stringify({ error: 'Email is required' }), {
@@ -35,6 +35,12 @@ export async function POST(req: NextRequest) {
           email,
           firstName: name || '',
           tags: ['llm_geo_ebook_request'],
+          fieldValues: [
+            {
+              field: '2',
+              value: website || '',
+            },
+          ],
         },
       }),
     });

@@ -25,6 +25,7 @@ export default function NameEmailDialog({
 }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [website, setWebsite] = useState('');
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [open, setOpen] = useState(false);
@@ -50,12 +51,13 @@ export default function NameEmailDialog({
       const res = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email }),
+        body: JSON.stringify({ name, email, website }),
       });
       if (res.ok) {
         setSuccess(true);
         setName('');
         setEmail('');
+        setWebsite('');
       } else {
         const data = await res.json();
         setError(data.error || 'Something went wrong');
@@ -79,7 +81,7 @@ export default function NameEmailDialog({
             Enter your details below to receive the ebook.
           </DialogDescription>
         </DialogHeader>
-        <form onSubmit={handleSubmit} className="grid gap-4">
+        <form onSubmit={handleSubmit} className="grid gap-4 text-[#212121]">
           <div className="grid gap-3">
             <Label htmlFor="name">Name</Label>
             <Input
@@ -99,6 +101,18 @@ export default function NameEmailDialog({
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
+              disabled={loading || success}
+            />
+          </div>
+          <div className="grid gap-3">
+            <Label htmlFor="website">Website</Label>
+            <Input
+              id="website"
+              name="website"
+              type="url"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
               required
               disabled={loading || success}
             />
