@@ -20,8 +20,12 @@ import { Label } from '@/components/ui/label';
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 export default function NameEmailDialog({
   trigger,
+  listID,
+  tag,
 }: {
   trigger: React.ReactNode;
+  listID?: string;
+  tag?: string;
 }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -51,7 +55,7 @@ export default function NameEmailDialog({
       const res = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, website }),
+        body: JSON.stringify({ name, email, website, listID, tag }),
       });
       if (res.ok) {
         setSuccess(true);

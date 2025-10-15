@@ -7,10 +7,22 @@ import type { NextRequest } from 'next/server';
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, website } = await req.json();
+    const { name, email, website, listID, tag } = await req.json();
 
     if (!email) {
       return new Response(JSON.stringify({ error: 'Email is required' }), {
+        status: 400,
+      });
+    }
+
+    if (!listID) {
+      return new Response(JSON.stringify({ error: 'List ID is required' }), {
+        status: 400,
+      });
+    }
+
+    if (!tag) {
+      return new Response(JSON.stringify({ error: 'Tag is required' }), {
         status: 400,
       });
     }
@@ -34,7 +46,7 @@ export async function POST(req: NextRequest) {
         contact: {
           email,
           firstName: name || '',
-          tags: ['llm_geo_ebook_request'],
+          tags: [tag],
           fieldValues: [
             {
               field: '2',
@@ -63,7 +75,7 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({
         contactList: {
-          list: '32',
+          list: listID,
           contact: contactId,
           status: 1, // 1 = subscribed
         },
