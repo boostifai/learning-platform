@@ -7,7 +7,7 @@ import type { NextRequest } from 'next/server';
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, website, listID, tag } = await req.json();
+    const { name, email, website, listID, tag, language } = await req.json();
 
     if (!email) {
       return new Response(JSON.stringify({ error: 'Email is required' }), {
@@ -51,6 +51,10 @@ export async function POST(req: NextRequest) {
             {
               field: '2',
               value: website || '',
+            },
+            {
+              field: '15',
+              value: language || 'English',
             },
           ],
         },

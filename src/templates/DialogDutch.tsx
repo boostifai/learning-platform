@@ -18,7 +18,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
-export default function NameEmailDialog({
+export default function NameEmailDialogDutch({
   trigger,
   listID,
   tag,
@@ -61,7 +61,7 @@ export default function NameEmailDialog({
           website,
           listID,
           tag,
-          language: 'English',
+          language: 'Dutch',
         }),
       });
       if (res.ok) {
@@ -86,15 +86,15 @@ export default function NameEmailDialog({
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle className="text-lg font-semibold text-[#212121]">
-            Get Free Ebook
+            Ontvang Gratis Ebook
           </DialogTitle>
           <DialogDescription>
-            Enter your details below to receive the ebook.
+            Vul je gegevens hieronder in om het ebook te ontvangen.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="grid gap-4 text-[#212121]">
           <div className="grid gap-3">
-            <Label htmlFor="name">Name</Label>
+            <Label htmlFor="name">Naam</Label>
             <Input
               id="name"
               name="name"
@@ -105,7 +105,7 @@ export default function NameEmailDialog({
             />
           </div>
           <div className="grid gap-3">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">E-mailadres</Label>
             <Input
               id="email"
               name="email"
@@ -134,14 +134,14 @@ export default function NameEmailDialog({
                 return (
                   <div className="flex items-center gap-2">
                     <Loader2 className="animate-spin" />
-                    <span>Submitting...</span>
+                    <span>Verzenden...</span>
                   </div>
                 );
               }
               if (success) {
                 return (
                   <div className="font-semibold text-green-600">
-                    Thank you! Check your email for the ebook.
+                    Bedankt! Controleer je e-mail voor het ebook.
                   </div>
                 );
               }
@@ -149,11 +149,11 @@ export default function NameEmailDialog({
                 <>
                   <DialogClose asChild>
                     <Button variant="outline" type="button" disabled={loading}>
-                      Cancel
+                      Annuleren
                     </Button>
                   </DialogClose>
                   <Button type="submit" disabled={loading}>
-                    Submit
+                    Verzenden
                   </Button>
                 </>
               );
