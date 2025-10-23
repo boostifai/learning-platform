@@ -24,7 +24,7 @@ const Base = () => (
       imageWidth={372}
       imageHeight={660}
       listID="32"
-      tag="llm_geo_ebook_giveaway"
+      tag="llm_geo_ebook_giveaway_en"
     />
 
     <Sponsors />

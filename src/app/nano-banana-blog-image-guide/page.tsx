@@ -24,7 +24,7 @@ const Base = () => (
       imageWidth={450}
       imageHeight={336}
       listID="33"
-      tag="nano_banana_blog_image_giveaway"
+      tag="nano_banana_blog_image_giveaway_en"
     />
     <Sponsors />
     <Section

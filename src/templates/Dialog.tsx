@@ -52,11 +52,22 @@ export default function NameEmailDialog({
     return undefined;
   }, [success]);
 
+  function normalizeWebsite(url: string) {
+    if (!url) return '';
+    // If it starts with http(s), return as is
+    if (/^https?:\/\//i.test(url)) return url;
+    // If it starts with www, add https://
+    if (/^www\./i.test(url)) return `https://${url}`;
+    // Otherwise, add https://
+    return `https://${url}`;
+  }
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
     setError('');
     setSuccess(false);
+    const normalizedWebsite = normalizeWebsite(website.trim());
     try {
       const res = await fetch('/api/subscribe', {
         method: 'POST',
@@ -64,7 +75,7 @@ export default function NameEmailDialog({
         body: JSON.stringify({
           name,
           email,
-          website,
+          website: normalizedWebsite,
           listID,
           tag,
           language: 'English',
@@ -127,11 +138,12 @@ export default function NameEmailDialog({
             <Input
               id="website"
               name="website"
-              type="url"
+              type="text"
               value={website}
               onChange={(e) => setWebsite(e.target.value)}
               required
               disabled={loading || success}
+              placeholder="example.com"
             />
           </div>
           <DialogFooter>

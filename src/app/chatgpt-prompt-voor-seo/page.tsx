@@ -24,7 +24,7 @@ const Base = () => (
       imageWidth={450}
       imageHeight={600}
       listID="35"
-      tag="chatgpt_prompt_seo_giveaway"
+      tag="chatgpt_prompt_seo_giveaway_nl"
     />
     <SponsorsDutch />
     <Section

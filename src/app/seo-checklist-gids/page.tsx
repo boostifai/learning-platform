@@ -24,7 +24,7 @@ const Base = () => (
       imageWidth={450}
       imageHeight={600}
       listID="34"
-      tag="seo_checklist_giveaway"
+      tag="seo_checklist_giveaway_nl"
     />
     <SponsorsDutch />
     <Section
