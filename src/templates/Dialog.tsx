@@ -1,6 +1,7 @@
 'use client';
 
 import { Loader2 } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
@@ -35,9 +36,14 @@ export default function NameEmailDialog({
   const [open, setOpen] = useState(false);
   const [error, setError] = useState('');
 
+  const router = useRouter();
+
   React.useEffect(() => {
     if (success) {
       const timer = setTimeout(() => {
+        router.push(
+          'https://api.leadconnectorhq.com/widget/survey/GENJ97eqgxKrg7nukfoq',
+        );
         setOpen(false);
         setSuccess(false);
       }, 3000);

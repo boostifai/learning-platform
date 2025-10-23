@@ -1,6 +1,7 @@
 'use client';
 
 import { Loader2 } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
@@ -35,16 +36,22 @@ export default function NameEmailDialogDutch({
   const [open, setOpen] = useState(false);
   const [error, setError] = useState('');
 
+  const router = useRouter();
+
   React.useEffect(() => {
     if (success) {
       const timer = setTimeout(() => {
+        // Use Next.js native client navigation instead of window.location
+        router.push(
+          'https://link.apisystem.tech/widget/survey/V7To2TXcfUTDC1WWSHiH',
+        );
         setOpen(false);
         setSuccess(false);
       }, 3000);
       return () => clearTimeout(timer);
     }
     return undefined;
-  }, [success]);
+  }, [success, router]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
