@@ -32,7 +32,7 @@ const Hero = ({
   listID?: string;
   tag?: string;
 }) => (
-  <Background color="bg-gray-100">
+  <Background color="bg-[#D5DBFD]">
     <Section yPadding="py-6">
       <NavbarTwoColumns logo={<Logo xl />}>
         <li>
