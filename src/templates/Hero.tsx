@@ -34,7 +34,7 @@ const Hero = ({
 }) => (
   <Background color="bg-[#D5DBFD]">
     <Section yPadding="py-6">
-      <NavbarTwoColumns logo={<Logo xl />}>
+      <NavbarTwoColumns logo={<Logo xl />} logoHref="https://boostifai.com/en">
         <li>
           <Link href="https://boostifai.com/en/book-meeting">
             <button className="btn-primary px-3 py-1 text-sm">
