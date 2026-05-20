@@ -10,7 +10,7 @@ const Banner = () => (
       title="Let Boostifai Help You Win the AI Search Game"
       subtitle="Start your Free Trial."
       button={
-        <Link href="https://www.boostifai.com/get-started-now/">
+        <Link href="https://boostifai.com/en/book-meeting">
           <Button>Start free trial</Button>
         </Link>
       }

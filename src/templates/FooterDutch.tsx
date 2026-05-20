@@ -57,13 +57,13 @@ const FooterDutch = () => (
         }
       >
         <li>
-          <Link href="https://www.boostifai.com">Home</Link>
+          <Link href="https://boostifai.com/nl">Home</Link>
         </li>
         <li>
-          <Link href="https://www.boostifai.com/about/">Over ons</Link>
+          <Link href="https://boostifai.com/nl">Over ons</Link>
         </li>
         <li>
-          <Link href="https://www.boostifai.com/pricing-business/">
+          <Link href="https://boostifai.com/nl/business-pricing">
             Prijzen
           </Link>
         </li>

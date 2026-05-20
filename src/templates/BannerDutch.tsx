@@ -10,7 +10,7 @@ const BannerDutch = () => (
       title="Laat Boostifai je helpen de AI-zoekgame te winnen"
       subtitle="Begin je gratis proefperiode."
       button={
-        <Link href="https://www.boostifai.com/get-started-now/">
+        <Link href="https://boostifai.com/nl/book-meeting">
           <Button>Start gratis proefperiode</Button>
         </Link>
       }

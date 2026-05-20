@@ -36,7 +36,7 @@ const HeroDutch = ({
     <Section yPadding="py-6">
       <NavbarTwoColumns logo={<Logo xl />}>
         <li>
-          <Link href="https://www.boostifai.com/get-started-now/">
+          <Link href="https://boostifai.com/nl/book-meeting">
             <button className="btn-primary px-3 py-1 text-sm">
               Start gratis proefperiode
             </button>

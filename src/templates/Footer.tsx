@@ -57,13 +57,13 @@ const Footer = () => (
         }
       >
         <li>
-          <Link href="https://www.boostifai.com">Home</Link>
+          <Link href="https://boostifai.com/en">Home</Link>
         </li>
         <li>
-          <Link href="https://www.boostifai.com/about/">About</Link>
+          <Link href="https://boostifai.com/en">About</Link>
         </li>
         <li>
-          <Link href="https://www.boostifai.com/pricing-business/">
+          <Link href="https://boostifai.com/en/business-pricing">
             Pricing
           </Link>
         </li>
